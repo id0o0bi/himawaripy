@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Earth</title>
+        <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            /*overflow-x: scroll;
+            overflow-y: scroll;*/
+            white-space:nowrap;
+            overflow: hidden;
+        }
+        </style>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+    window.onload = function () {
+        var dimension = 8;
+        url = 'http://himawari8-dl.nict.go.jp/himawari8/img/D531106/'+dimension+'d/550/2016/08/05/023000_';
+        var map = document.getElementsByTagName("body")[0];
+
+        for (var i = 0; i < dimension; i++) {
+            for (var j = 0; j < dimension; j++) {
+                var img = document.createElement("img");
+                img.setAttribute("src", url + j + '_' + i + '.png');
+                map.appendChild(img);
+            }
+            map.appendChild(document.createElement('br'));
+        }
+    }
+    </script>
+</html>
